@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title>Time</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+ <script>
+   var time = new Date();
+   function show(id) {
+        document.getElementById('demo').value=time;
+     }
+      
+	 time_plus_2 = new Time(new Time().getTime()+2*3600*1000);
+	 var disableTextRanges = false,
+	 
+$('#timePicker').timepicker({
+		'step': 30,
+    'forceRoundTime': true,
+    'timeFormat': 'H:i',
+   'disableTimeRanges': [
+        [0, show(time_plus_2)]
+    ]
+});
+
+$('#timePicker').timepicker('setTime', time_plus_2);
+	 
+
+</script>
+
+</head>
+<body>
+<div class="timePicker dropdown focus-active" id="atimepicker">
+  Time: <input type='text' id="demo" value=""> 
+        <button id='1' onClick="show(this.id)">show time</button>
+ </div>  
+</body>
+</html>
